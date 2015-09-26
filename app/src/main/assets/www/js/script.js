@@ -2,6 +2,8 @@ var Q = document.querySelector.bind(document);
 var Qq = document.querySelectorAll.bind(document);
 HTMLElement.prototype.Q = HTMLElement.prototype.querySelector;
 HTMLElement.prototype.Qq = HTMLElement.prototype.querySelectorAll;
+
+/*
 var b_hgt, b_wth;
 getViewport();
 
@@ -102,6 +104,8 @@ var parts = Qq('article h2'), quick_jump_items = Q("#quick_jump_items"), i, part
 for(i=0;i<parts_l;i++)
   quick_jump_items.innerHTML += "<li onclick='smoothScrollTo(" + (parts[i].offsetTop - 20) + ",500)'>" + parts[i].innerHTML + "</li>";
 Q('#quick_jump_header').innerHTML = Q('article h1').innerHTML;
+
+*/
 
 //Coloring QML
 var qml_codes = Qq('.qml_code'), qml_codes_l = qml_codes.length;
