@@ -3,4 +3,7 @@
     <string name="drawer_open">Menu opened</string>
     <string name="drawer_close">Menu closed</string>
     <string name="action_about">About</string>
+    <string name="drawer_title">About</string>
+    <string name="drawer_text">QMLrocks is a small application created to easily read QMLrocks tutorials on Android devices. \n \n http://qmlrocks.github.io \n \n Special thank to Material Dialogs library (@afollestad) and Material Drawer template (@kanytu).</string>
+    <string name="drawer_positivetext">Close</string>
 </resources>

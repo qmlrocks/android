@@ -11,6 +11,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerCallbacks {
@@ -21,7 +23,17 @@ public class MainActivity extends ActionBarActivity
     private NavigationDrawerFragment mNavigationDrawerFragment;
     private Toolbar mToolbar;
 
+    private boolean loaded = false;
+
     private WebView mWebView;
+
+    private void showBasic() {
+        new MaterialDialog.Builder(this)
+                .title(R.string.drawer_title)
+                .content(R.string.drawer_text)
+                .positiveText(R.string.drawer_positivetext)
+                .show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +52,8 @@ public class MainActivity extends ActionBarActivity
         mWebView = (WebView) findViewById(R.id.activity_main_webview);
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl("file:///android_asset/www/get-started.html");
+        mWebView.loadUrl("file:///android_asset/www/home.html");
+        loaded = true;
     }
 
     @Override
@@ -48,6 +61,8 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
         switch (position) {
             case 0:
+                if(loaded)
+                    mWebView.loadUrl("file:///android_asset/www/home.html");
                 break;
             case 1:
                 mWebView.loadUrl("file:///android_asset/www/get-started.html");
@@ -96,7 +111,7 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        showBasic();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
